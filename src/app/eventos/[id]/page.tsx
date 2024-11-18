@@ -57,8 +57,8 @@ const EventoDetalle = () => {
 
   console.log(Event);
 
-  const mapObrasToCards = (pieces: Piece[]) => {
-    return pieces.map((piece) => ({
+  const mapObrasToCards = (pieces: any) => {
+    return pieces.map((piece: any) => ({
       id: piece.id.toString(),
       title: piece.titulo,
       src: piece.foto1,
