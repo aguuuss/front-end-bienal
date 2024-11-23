@@ -101,8 +101,8 @@ const EventosList = () => {
       formData.append('lugar', updatedEvent.lugar);
       formData.append('descripcion', updatedEvent.descripcion);
 
-      if (updatedEvent.portada instanceof File) {
-        formData.append('portada', updatedEvent.portada);
+      if (updatedEvent.foto1 instanceof File) {
+        formData.append('foto1', updatedEvent.foto1);
       }
 
       const response = await fetch(

@@ -11,8 +11,9 @@ const AddEventForm: React.FC = () => {
     fecha_final: '',
     lugar: '',
     descripcion: '',
-    estado: '',
-    portada: '',
+    foto1: '',
+    foto2: '',
+    evento_en_transcurso: '',
   });
 
   const handleChange = (
@@ -29,7 +30,7 @@ const AddEventForm: React.FC = () => {
     if (e.target.files) {
       setFormData({
         ...formData,
-        portada: e.target.files[0],
+        foto1: e.target.files[0],
       });
     }
   };
@@ -40,7 +41,7 @@ const AddEventForm: React.FC = () => {
     const data = new FormData();
     Object.entries(formData).forEach(([key, value]) => {
       if (value !== null) {
-        if (key === 'portada' && value instanceof File) {
+        if (key === 'foto1' && value instanceof File) {
           data.append(key, value);
         } else {
           data.append(key, value.toString());
@@ -69,8 +70,9 @@ const AddEventForm: React.FC = () => {
           fecha_final: '',
           lugar: '',
           descripcion: '',
-          estado: '',
-          portada: '',
+          foto1: '',
+          foto2: '',
+          evento_en_transcurso: '',
         });
       } else {
         const errorData = await response.json();
@@ -132,7 +134,7 @@ const AddEventForm: React.FC = () => {
         />
         <input
           type="file"
-          name="portada"
+          name="foto1"
           onChange={handleFileChange}
           accept="image/*"
           className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"

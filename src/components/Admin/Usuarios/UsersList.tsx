@@ -14,8 +14,8 @@ export interface Usuario {
 
 const UserList = () => {
   const { user } = useUserStore();
-  const [usuarios, setUsuarios] = useState<Usuario[]>([]); 
-  const [nextPage, setNextPage] = useState<string | null>(null); 
+  const [usuarios, setUsuarios] = useState<Usuario[]>([]);
+  const [nextPage, setNextPage] = useState<string | null>(null);
   const [prevPage, setPrevPage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -126,30 +126,30 @@ const UserList = () => {
               <tbody className="bg-white divide-y divide-gray-200">
                 {usuarios.length > 0 ? (
                   usuarios.map((usuario) => (
-                    <tr key={usuario.user.id}>
+                    <tr key={usuario.id}>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm text-gray-900">
-                          {usuario.user.id}
+                          {usuario.id}
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm text-gray-900">
-                          {usuario.user.username}
+                          {usuario.username}
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm text-gray-900">
-                          {usuario.user.first_name}
+                          {usuario.first_name}
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm text-gray-900">
-                          {usuario.user.last_name}
+                          {usuario.last_name}
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm text-gray-900">
-                          {usuario.user.email}
+                          {usuario.email}
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">

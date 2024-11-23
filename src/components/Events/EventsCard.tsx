@@ -52,7 +52,7 @@ export default function EventsCard({
                   fecha_final={event.fecha_final}
                   descripcion={event.descripcion}
                   estado={estado}
-                  portada={event.portada}
+                  portada={event.foto1}
                 />
               </CarouselItem>
             ))}

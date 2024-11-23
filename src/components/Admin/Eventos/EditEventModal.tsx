@@ -17,7 +17,7 @@ const EditEventModal: React.FC<EditEventModalProps> = ({
   const [fechaFin, setFechaFin] = useState('');
   const [lugar, setLugar] = useState('');
   const [descripcion, setDescripcion] = useState('');
-  const [portada, setPortada] = useState<File | null>(null);
+  const [foto1, setPortada] = useState<File | null>(null);
 
   useEffect(() => {
     if (evento) {
@@ -39,7 +39,7 @@ const EditEventModal: React.FC<EditEventModalProps> = ({
         fecha_final: fechaFin,
         lugar,
         descripcion,
-        portada: portada ? URL.createObjectURL(portada) : evento.portada,
+        foto1: foto1 ? URL.createObjectURL(foto1) : evento.foto1,
       };
       onSave(updatedEvent);
     }

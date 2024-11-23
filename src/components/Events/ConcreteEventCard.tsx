@@ -8,7 +8,7 @@ interface ConcreteEventCardProps {
   fecha_final: string;
   descripcion: string;
   estado: string;
-  portada: string | null;
+  portada: string | File;
 }
 
 export default function ConcreteEventCard({
